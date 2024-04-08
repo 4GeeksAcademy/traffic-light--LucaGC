@@ -1,12 +1,249 @@
-
-/* 
-
-    You can write your own styles here...
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
+    height: 100vh;
+  }
+  
+  .trafic-container {
+    margin: auto;
+    width: 200px;
+    height: 300px;
+    position: relative;
+   
+  }
+  
+  .top {
+    background-color: #000;
+    margin: auto;
+    border-top: none !important;
+    border-bottom: none !important;
+    border: 2px solid rgb(11, 215, 38);
+    width: 20px;
+    height: 90px;
+  }
+  
+  .traffic {
+    background-color: #000;
+    border: 2px solid rgb(11, 215, 38);    margin: auto;
+    width: 130px;
+    border-radius: 5px;
+    height: 290px;
+    position: relative;
+    z-index: 50;
+    padding-top: 8px;
+  }
+  
+  .red {
+    background-color: rgba(255, 0, 0, 0.5);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin: auto;
+    transition: all 0.5s;
+  }
+  .green {
+    background-color: rgba(0, 255, 0, 0.5);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin-top: 10px !important;
+    transition: all 0.5s;
+    margin: auto;
+  }
+  .yellow {
+    background-color: rgba(255, 255, 0, 0.5);
+    width: 84px;
+    height: 84px;
+    transition: all 0.5s;
+    border-radius: 50%;
+    margin: auto;
+    margin-top: 10px !important;
+  }
+  .red-click {
+    background-color: rgba(255, 0, 0, 1);
+    filter: drop-shadow(3px 3px 1.3rem rgba(255, 23, 23, 1));
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin: auto;
+    animation: pulseRed 0.9s linear 0.2s infinite;
+  }
+  .yellow-click {
+    background-color: rgba(255, 255, 0, 1);
+    filter: drop-shadow(3px 3px 1.3rem rgba(182, 255, 23, 1));
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin: auto;
+    animation: pulseYellow 0.9s linear 0.2s infinite;
+    margin-top: 10px !important;
+  }
+  .green-click {
+    background-color: rgba(0, 255, 0, 1);
+    filter: drop-shadow(3px 3px 1.3rem rgba(33, 255, 44, 1));
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin-top: 10px !important;
+    margin: auto;
+    animation: pulseGreen 0.9s linear 0.2s infinite;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  .btn-new {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .btn-new::after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 20px;
+    height: 117px;
+border: 2px solid rgb(11, 215, 38);    bottom: 0;
+    left: 42%;
+    background-color: #000;
+    border-top: none;
+    border-bottom: none;
+  }
+  
+  .btn-change {
+    background-color: #000;
+    color: rgb(11, 215, 38);
+    font-weight: 600;
+    border: 2px solid rgb(11, 215, 38);
+    padding: 10px 60px;
+    transition: all 0.4s;
+    position: relative;
+    z-index: 8;
+    text-shadow: 4px 4px 22px rgb(11, 215, 38);
+    font-size: 1rem;
+    white-space: nowrap;
+    border-radius: 5px;
+    animation: pulseHover 0.9s linear 0.2s infinite;
+    display: flex;
+  }
+  .btn-change:hover {
+    border: 2px solid #000;
+    background-color: rgb(11, 215, 38);
+    animation: pulseBlack 0.9s linear 0.2s infinite;
+    color: #000;
+  }
+  .changer {
+    padding: 10px 45px;
+  }
+  
+  .purple {
+    background-color: rgba(255, 0, 242, 0.5);
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    margin: auto;
+  }
+  .purple-click {
+    background-color: rgb(230, 0, 255);
+    filter: drop-shadow(3px 3px 1.3rem rgb(251, 0, 255));
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    margin: auto;
+    animation: pulsePurple 0.9s linear 0.2s infinite;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  
+  
+ 
+  /******************************
+  ************KEYFRAMES*********
+  *****************************/
+  @keyframes pulsePurple {
+    0% {
+      box-shadow: 0 0 16px #ff00f2, inset 0 0 16px #ff00f2;
+    }
+    50% {
+      box-shadow: 0 0 32px #ff00f2, inset 0 0 28px #ff00f2;
+    }
+    100% {
+      box-shadow: 0 0 16px #ff00f2, inset 0 0 16px #ff00f2;
+    }
+  }
+  
+  @keyframes pulseRed {
+    0% {
+      box-shadow: 0 0 16px #ff0000, inset 0 0 16px #df0000;
+    }
+    50% {
+      box-shadow: 0 0 32px #ff0000, inset 0 0 28px #ff0000;
+    }
+    100% {
+      box-shadow: 0 0 16px #ff0000, inset 0 0 16px #ff0000;
+    }
+  }
+  @keyframes pulseYellow {
+    0% {
+      box-shadow: 0 0 16px rgb(11, 215, 38), inset 0 0 16px rgb(11, 215, 38);
+    }
+    50% {
+      box-shadow: 0 0 32px rgb(11, 215, 38), inset 0 0 28px rgb(11, 215, 38);
+    }
+    100% {
+      box-shadow: 0 0 16px rgb(11, 215, 38), inset 0 0 16px rgb(11, 215, 38);
+    }
+  }
+  @keyframes pulseGreen {
+    0% {
+      box-shadow: 0 0 16px rgba(0, 255, 0, 1), inset 0 0 16px rgba(0, 255, 0, 1);
+    }
+    50% {
+      box-shadow: 0 0 32px rgba(0, 255, 0, 1), inset 0 0 28px rgba(0, 255, 0, 1);
+    }
+    100% {
+      box-shadow: 0 0 16px rgba(0, 255, 0, 1), inset 0 0 16px rgba(0, 255, 0, 1);
+    }
+  }
+  @keyframes pulseBlack {
+    0% {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 1), inset 0 0 16px rgba(0, 0, 0, 1);
+    }
+    50% {
+      box-shadow: 0 0 32px rgba(0, 0, 0, 1), inset 0 0 28px rgba(0, 0, 0, 1);
+    }
+    100% {
+      box-shadow: 0 0 16px rgba(0, 0, 0, 1), inset 0 0 16px rgba(0, 0, 0, 1);
+    }
+  }
+  @keyframes pulseHover {
+    0% {
+      box-shadow: 0 0 16px rgb(11, 215, 38), inset 0 0 16px rgb(11, 215, 38);
+    }
+    50% {
+      box-shadow: 0 0 32px rgb(11, 215, 38), inset 0 0 28px rgb(11, 215, 38);
+    }
+    100% {
+      box-shadow: 0 0 16px rgb(11, 215, 38), inset 0 0 16px rgb(11, 215, 38);
+    }
+  }
